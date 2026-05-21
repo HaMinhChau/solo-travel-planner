@@ -29,3 +29,11 @@ mongoose.connect(process.env.MONGO_URI)
   req.url = '/all-users'
   authRoutes(req, res, next)
 })
+
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://solo-travel-planner.vercel.app'
+  ],
+  credentials: true
+}))
